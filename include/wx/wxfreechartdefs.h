@@ -10,6 +10,7 @@
 #ifndef WXFREECHARTDEFS_H
 #define WXFREECHARTDEFS_H
 
+#include<wx/version.h>
 #include <wx/wxprec.h>
 
 #ifdef __BORLANDC__
@@ -18,6 +19,21 @@
 
 #ifndef WX_PRECOMP
     #include <wx/wx.h>
+#endif
+
+// WX version compatibility stuff
+#if wxCHECK_VERSION(2,9,0)
+#define wxOVERRIDE
+#else
+typedef int wxPenStyle;
+typedef int wxBrushStyle;
+
+#define wxOVERRIDE
+#define wxPENSTYLE_SOLID    wxSOLID
+#define wxPENSTYLE_DOT      wxDOT
+#define wxPENSTYLE_TRANSPARENT    wxTRANSPARENT
+#define wxBRUSHSTYLE_SOLID  wxSOLID
+#define wxBRUSHSTYLE_TRANSPARENT  wxTRANSPARENT
 #endif
 
 // dll impexp macros. Thanks to Mike Sazonov
