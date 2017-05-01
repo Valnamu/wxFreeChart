@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="wxFreeChart" />
+		<Option makefile="build\Makefile.gcc" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<MakeCommands>
+			<Build command="c:\myprog~1\mingw\msys\1.0\bin\$make -f $makefile $target" />
+			<CompileFile command="$make -f $makefile $file" />
+			<Clean command="$make -f $makefile clean$target" />
+			<DistClean command="$make -f $makefile distclean$target" />
+			<AskRebuildNeeded command="$make -q -f $makefile $target" />
+			<SilentBuild command="$make -s -f $makefile $target" />
+		</MakeCommands>
+		<Build>
+			<Target title="LIB">
+				<Option output="libwxFreeChart" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="" />
+				<Option type="2" />
+				<Option compiler="gcc" />
+				<Option createDefFile="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-DWXnotMAKINGDLL_FREECHART" />
+				</Compiler>
+				<Linker>
+					<Add library="libwxmsw30u_aui.a" />
+					<Add library="libwxmsw30u_core.a" />
+					<Add library="libwxbase30u.a" />
+					<Add library="libwxtiff.a" />
+					<Add library="libwxjpeg.a" />
+					<Add library="libwxpng.a" />
+					<Add library="libwxexpat.a" />
+					<Add directory="$(#wx.lib)\gcc_dll" />
+				</Linker>
+			</Target>
+			<Target title="Demo">
+				<Option output="bin\Release\Demo" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-pg" />
+					<Add directory="$(#wx.lib)\gcc_dll\msw" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(#wx.lib)\gcc_dll\msw" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-pg -lgmon" />
+					<Add option="-mthreads" />
+					<Add library="libwxFreeChart.a" />
+					<Add library="libwxmsw30u_aui.a" />
+					<Add library="libwxmsw30u_core.a" />
+					<Add library="libwxbase30u.a" />
+					<Add library="libwxtiff.a" />
+					<Add library="libwxjpeg.a" />
+					<Add library="libwxpng.a" />
+					<Add library="libwxmsw30u_adv.a" />
+					<Add library="libwxmsw30u_xrc.a" />
+					<Add library="libwxmsw30u_propgrid.a" />
+					<Add library="libwxmsw30u_richtext.a" />
+					<Add library="libwxmsw30u_media.a" />
+					<Add library="libwxmsw30u_ribbon.a" />
+					<Add library="libwxzlib.a" />
+					<Add library="libwxmsw30u_gl.a" />
+					<Add library="libole32.a" />
+					<Add library="libkernel32.a" />
+					<Add library="libuser32.a" />
+					<Add library="libgdi32.a" />
+					<Add library="libwxregex.a" />
+					<Add library="libwxexpat.a" />
+					<Add library="libcomdlg32.a" />
+					<Add library="libwinspool.a" />
+					<Add library="libwinmm.a" />
+					<Add library="libshell32.a" />
+					<Add library="libcomctl32.a" />
+					<Add library="liboleaut32.a" />
+					<Add library="libuuid.a" />
+					<Add library="librpcrt4.a" />
+					<Add library="libadvapi32.a" />
+					<Add library="libwsock32.a" />
+					<Add library="libodbc32.a" />
+					<Add directory="$(#wx.lib)\gcc_lib" />
+					<Add directory="." />
+				</Linker>
+			</Target>
+			<Target title="ConsoleDemo">
+				<Option output="bin\Release\ConsoleDemo" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
+				<Option external_deps="libwxFreeChart.a;" />
+				<Option additional_output="libwxFreeChart.a;" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-pg" />
+					<Add option="-g" />
+					<Add option="-DWXnotUSINGDLL" />
+					<Add directory="$(#wx.lib)\gcc_dll\msw" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="$(#wx.lib)\gcc_dll\msw" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-pg -lgmon" />
+					<Add option="-mthreads" />
+					<Add library="libwxFreeChart.a" />
+					<Add library="libwxmsw30u_aui.a" />
+					<Add library="libwxmsw30u_core.a" />
+					<Add library="libwxbase30u.a" />
+					<Add library="libwxtiff.a" />
+					<Add library="libwxjpeg.a" />
+					<Add library="libwxpng.a" />
+					<Add library="libwxmsw30u_adv.a" />
+					<Add library="libwxmsw30u_xrc.a" />
+					<Add library="libwxmsw30u_propgrid.a" />
+					<Add library="libwxmsw30u_richtext.a" />
+					<Add library="libwxmsw30u_media.a" />
+					<Add library="libwxmsw30u_ribbon.a" />
+					<Add library="libwxzlib.a" />
+					<Add library="libwxmsw30u_gl.a" />
+					<Add library="libole32.a" />
+					<Add library="libkernel32.a" />
+					<Add library="libuser32.a" />
+					<Add library="libgdi32.a" />
+					<Add library="libwxregex.a" />
+					<Add library="libwxexpat.a" />
+					<Add library="libcomdlg32.a" />
+					<Add library="libwinspool.a" />
+					<Add library="libwinmm.a" />
+					<Add library="libshell32.a" />
+					<Add library="libcomctl32.a" />
+					<Add library="liboleaut32.a" />
+					<Add library="libuuid.a" />
+					<Add library="librpcrt4.a" />
+					<Add library="libadvapi32.a" />
+					<Add library="libwsock32.a" />
+					<Add library="libodbc32.a" />
+					<Add directory="$(#wx.lib)\gcc_lib" />
+					<Add directory="." />
+				</Linker>
+			</Target>
+		</Build>
+		<VirtualTargets>
+			<Add alias="all" targets="LIB;ConsoleDemo;Demo;" />
+		</VirtualTargets>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add option="-m32" />
+			<Add option="-pipe" />
+			<Add option="-mthreads" />
+			<Add option='[[if (PLATFORM == PLATFORM_MSW &amp;&amp; (GetCompilerFactory().GetCompilerVersionString(_T(&quot;gcc&quot;)) &gt;= _T(&quot;4.0.0&quot;))) print(_T(&quot;-Wno-attributes&quot;));]]' />
+			<Add option="-D__GNUWIN32__" />
+			<Add option="-D__WXMSW__" />
+			<Add directory="$(#wx.lib)\gcc_dll\mswu" />
+			<Add directory="$(#wx.include)" />
+			<Add directory="$(#wx)\contrib\include" />
+			<Add directory="C:\Users\aftu5391\Documents\Web\Projets-Git\wxFreeChart\include" />
+		</Compiler>
+		<ResourceCompiler>
+			<Add directory="($#wx)\include" />
+		</ResourceCompiler>
+		<Linker>
+			<Add option="-mthreads" />
+		</Linker>
+		<Unit filename="include\wx\areadraw.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\art.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\axis\axis.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\axis\categoryaxis.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\axis\compdateaxis.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\axis\dateaxis.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\axis\juliandateaxis.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\axis\labelaxis.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\axis\logarithmicnumberaxis.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\axis\numberaxis.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\axisplot.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\bars\barplot.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\bars\barrenderer.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\category\categorydataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\category\categoryrenderer.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\category\categorysimpledataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\chart.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\chartpanel.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\chartrenderer.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\chartsplitpanel.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\colorscheme.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\crosshair.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\dataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\drawobject.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\drawutils.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\gantt\ganttdataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\gantt\ganttplot.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\gantt\ganttrenderer.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\gantt\ganttsimpledataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\legend.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\marker.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\multiplot.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\observable.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\ohlc\movingaverage.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\ohlc\movingavg.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\ohlc\ohlcbarrenderer.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\ohlc\ohlccandlestickrenderer.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\ohlc\ohlcdataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\ohlc\ohlcplot.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\ohlc\ohlcrenderer.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\ohlc\ohlcsimpledataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\pie\pieplot.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\plot.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\refobject.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\symbol.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\title.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\tooltips.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\wxfreechartdefs.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xy\functions\polynom.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xy\functions\sinefunction.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xy\juliantimeseriesdataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xy\timeseriesdataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xy\vectordataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xy\xyarearenderer.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xy\xydataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xy\xydynamicdataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xy\xyhistorenderer.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xy\xylinerenderer.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xy\xyplot.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xy\xyrenderer.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xy\xysimpledataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xyz\bubbleplot.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xyz\xyzdataset.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\xyz\xyzrenderer.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="include\wx\zoompan.h">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="sample\bardemos.cpp">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\bubbledemos.cpp">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\combinedaxisdemos.cpp">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\demo.cpp">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\demo.h">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\democollection.cpp">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\democollection.h">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\ganttdemos.cpp">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\markersdemos.cpp">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\multipleaxisdemos.cpp">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\ohlcdemos.cpp">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\pieplotdemos.cpp">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\timeseriesdemos.cpp">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\titledemos.cpp">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="sample\xydemos.cpp">
+			<Option target="ConsoleDemo" />
+			<Option target="Demo" />
+		</Unit>
+		<Unit filename="src\areadraw.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\art.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\axis\axis.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\axis\categoryaxis.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\axis\compdateaxis.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\axis\dateaxis.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\axis\juliandateaxis.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\axis\labelaxis.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\axis\logarithmicnumberaxis.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\axis\numberaxis.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\axisplot.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\bars\barplot.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\bars\barrenderer.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\category\categorydataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\category\categoryrenderer.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\category\categorysimpledataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\chart.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\chartpanel.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\chartsplitpanel.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\colorscheme.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\crosshair.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\dataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\gantt\ganttdataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\gantt\ganttplot.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\gantt\ganttrenderer.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\gantt\ganttsimpledataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\legend.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\marker.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\multiplot.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\ohlc\movingaverage.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\ohlc\ohlcbarrenderer.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\ohlc\ohlccandlestickrenderer.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\ohlc\ohlcdataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\ohlc\ohlcplot.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\ohlc\ohlcrenderer.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\ohlc\ohlcsimpledataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\pie\pieplot.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\plot.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\renderer.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\symbol.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\title.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\tooltips.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xy\functions\polynom.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xy\functions\sinefunction.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xy\juliantimeseriesdataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xy\timeseriesdataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xy\vectordataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xy\xyarearenderer.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xy\xydataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xy\xydynamicdataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xy\xyhistorenderer.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xy\xylinerenderer.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xy\xyplot.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xy\xyrenderer.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xy\xysimpledataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xyz\bubbleplot.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xyz\xyzdataset.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\xyz\xyzrenderer.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="src\zoompan.cpp">
+			<Option target="LIB" />
+		</Unit>
+		<Unit filename="wxFreeChartApp.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="wxFreeChartApp.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="wxFreeChartMain.cpp">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="wxFreeChartMain.h">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Unit filename="wxsmith\wxFreeChartframe.wxs">
+			<Option target="&lt;{~None~}&gt;" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+			<wxsmith version="1">
+				<gui name="wxWidgets" src="wxFreeChartApp.cpp" main="wxFreeChartFrame" init_handlers="necessary" language="CPP" />
+				<resources>
+					<wxFrame wxs="wxsmith/wxFreeChartframe.wxs" src="wxFreeChartMain.cpp" hdr="wxFreeChartMain.h" fwddecl="0" i18n="1" name="wxFreeChartFrame" language="CPP" />
+				</resources>
+			</wxsmith>
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
