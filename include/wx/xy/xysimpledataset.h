@@ -27,7 +27,7 @@ public:
      */
     wxDEPRECATED_MSG("Use XYSerie(const wxVector&<wxRealPoint>) instead.")
     XYSerie(double *data, size_t count);
-    
+
     /**
      * Constructs a new XY series using data that is already stored in the prepared vector.
      * @param seriesData The data that will be displayed by this series.
@@ -39,7 +39,7 @@ public:
     void Append(const wxRealPoint& values);
 
     void Insert(size_t index, const wxRealPoint& values);
-    
+
     void Remove(size_t index);
 
     /**
@@ -55,14 +55,14 @@ public:
      * @return The Y value for the selected data point.
      */
     double GetY(size_t index);
-    
+
     /**
      * Updates the X value of an existing data point within the series.
      * @param index The position of the data point within the series.
      * @param values The new values for X.
      */
     void UpdateX(size_t index, double x);
-    
+
     /**
      * Updates the Y value of an existing data point within the series.
      * @param index The position of the data point within the series.
@@ -76,7 +76,7 @@ public:
      * @param values The new values for X and Y.
      */
     void UpdatePoint(size_t index, const wxRealPoint& values);
-    
+
 
     size_t GetCount();
 
@@ -86,7 +86,7 @@ public:
 
 private:
     wxVector<wxRealPoint> m_newdata;
-    wxString m_name;  
+    wxString m_name;
 };
 
 WX_DECLARE_USER_EXPORTED_OBJARRAY(XYSerie *, XYSerieArray, WXDLLIMPEXP_FREECHART);
@@ -134,8 +134,8 @@ public:
 private:
     XYSerieArray m_series;
     wxVector<wxSharedPtr<XYSerie> > m_series2;
-    
-    friend XYSerie;
+
+    friend class XYSerie;
 };
 
 #endif /*XYSIMPLEDATASET_H_*/
